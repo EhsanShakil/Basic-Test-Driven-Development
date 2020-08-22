@@ -1,0 +1,17 @@
+laguage: node_js
+node_js:
+  - "stable"
+
+script:
+  - npm install
+  - npm test
+  - npm run build
+
+deploy:
+  provider: surge
+  skip_clenup: true
+  domain: test-driven-development.surge.sh
+  project: build
+
+on:
+  branch: master
